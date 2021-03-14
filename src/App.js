@@ -1,9 +1,11 @@
-import { Typography } from "@material-ui/core";
+import LoginPage from "./components/loginPage/LoginPage";
+import { useStyles } from "./stylesApp";
 
 function App() {
+  const classes = useStyles();
   return (
-    <div>
-      <Typography variant="h3">QRMENU</Typography>
+    <div className={classes.pageContainer}>
+      <LoginPage />
     </div>
   );
 }
