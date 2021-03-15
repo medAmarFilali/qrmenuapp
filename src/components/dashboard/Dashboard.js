@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <div>
       <Typography variant="h3">Dashboard</Typography>
