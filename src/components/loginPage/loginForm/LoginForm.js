@@ -1,11 +1,29 @@
-import { Paper, Typography } from "@material-ui/core";
+import { Paper, Typography, TextField, Button } from "@material-ui/core";
 import { useStyles } from "./stylesLoginForm";
 
 const LoginForm = () => {
   const classes = useStyles();
   return (
     <Paper elevation={3} className={classes.loginFormContainer}>
-      <Typography variant="h6">This is the login Form</Typography>
+      <Typography variant="h6" className={classes.loginTitle}>
+        Connexion
+      </Typography>
+      <TextField
+        variant="outlined"
+        label="Email"
+        fullWidth
+        className={classes.textField}
+      />
+      <TextField
+        type="password"
+        variant="outlined"
+        label="Mot de passe"
+        className={classes.textField}
+        fullWidth
+      />
+      <Button color="primary" variant="contained" fullWidth>
+        Se Connecter
+      </Button>
     </Paper>
   );
 };
