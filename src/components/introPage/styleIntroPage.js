@@ -9,8 +9,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   paperContainer: {
     display: "flex",
-    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
     width: 450,
-    padding: theme.spacing(),
   },
 }));
