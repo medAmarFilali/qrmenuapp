@@ -1,4 +1,4 @@
-import { ADD_RESTAURANT_INFO } from "../actions/dataAction";
+import { ADD_RESTAURANT_INFO, CREATE_NEW_MENU } from "../actions/dataAction";
 
 const initState = {
   name: "Boulila",
@@ -15,6 +15,16 @@ const dataReducer = (state = initState, action) => {
         address: action.payload.address,
         phone: action.payload.phone,
       };
+    case CREATE_NEW_MENU: {
+      return {
+        ...state,
+        menu: {
+          Name: "",
+          platdujour: "",
+          dishes: [],
+        },
+      };
+    }
     default:
       return state;
   }

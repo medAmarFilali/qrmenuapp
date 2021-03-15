@@ -32,4 +32,12 @@ export const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  serviceDetails: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
 }));

@@ -24,7 +24,7 @@ const theme = createMuiTheme({
       },
       h2: {
         fontSize: "2.5rem",
-        fontWeight: 300,
+        fontWeight: 200,
         color: grey[900],
       },
       h3: {
@@ -45,7 +45,7 @@ const theme = createMuiTheme({
       },
       h6: {
         fontSize: "1rem",
-        fontWeight: 700,
+        fontWeight: 400,
         color: grey[900],
         letterSpacing: 2,
       },

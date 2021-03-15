@@ -23,13 +23,15 @@ const QrAppBar = ({ handleDrawerToggle, mobileOpen }) => {
             <MenuIcon />
           </IconButton>
         </div>
-        <div className={classes.restoTitleContainer}>
-          <Typography variant="h5" className={classes.restoTitle}>
-            Restaurant {restoData.name}
-          </Typography>
-        </div>
-        <div className={classes.accountContainer}>
-          <AccountCircleIcon className={classes.accountIcon} />
+        <div className={classes.serviceDetails}>
+          <div className={classes.restoTitleContainer}>
+            <Typography variant="h5" className={classes.restoTitle}>
+              Restaurant {restoData.name}
+            </Typography>
+          </div>
+          <div className={classes.accountContainer}>
+            <AccountCircleIcon className={classes.accountIcon} />
+          </div>
         </div>
       </Toolbar>
     </AppBar>
