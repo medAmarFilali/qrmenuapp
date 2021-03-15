@@ -1,9 +1,9 @@
 import { ADD_RESTAURANT_INFO } from "../actions/dataAction";
 
 const initState = {
-  name: "",
-  address: "",
-  phone: "",
+  name: "Boulila",
+  address: "Rue de france",
+  phone: "0551123456",
 };
 
 const dataReducer = (state = initState, action) => {

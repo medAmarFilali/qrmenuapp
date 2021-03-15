@@ -3,7 +3,7 @@ import { grey } from "@material-ui/core/colors";
 
 export const useStyles = makeStyles((theme) => ({
   pageContainer: {
-    backgroundColor: grey[300],
+    backgroundColor: grey[100],
     height: "100vh",
   },
 }));

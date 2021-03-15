@@ -21,7 +21,7 @@ const LoginForm = () => {
         className={classes.textField}
         fullWidth
       />
-      <Button color="primary" variant="contained" fullWidth>
+      <Button color="secondary" variant="contained" fullWidth>
         Se Connecter
       </Button>
     </Paper>

@@ -1,16 +1,12 @@
-import { Typography } from "@material-ui/core";
 import { useStyles } from "./styleLoginPage";
-import CropFreeIcon from "@material-ui/icons/CropFree";
 import LoginForm from "./loginForm/LoginForm";
+import QrMenuLogo from "../branding/QrMenuLogo";
 
 const LoginPage = () => {
   const classes = useStyles();
   return (
     <div className={classes.loginContainer}>
-      <div className={classes.brandContainer}>
-        <CropFreeIcon />
-        <Typography variant="h5">QRMenu</Typography>
-      </div>
+      <QrMenuLogo dark={true} marginBottom={24} />
       <LoginForm />
     </div>
   );

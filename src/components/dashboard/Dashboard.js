@@ -1,9 +1,9 @@
-import { Typography } from "@material-ui/core";
+import QrAppBar from "./qrAppBar/QrAppBar";
 
-const Dashboard = (props) => {
+const Dashboard = () => {
   return (
     <div>
-      <Typography variant="h3">Dashboard</Typography>
+      <QrAppBar />
     </div>
   );
 };

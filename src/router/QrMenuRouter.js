@@ -9,7 +9,7 @@ const QrMenuRouter = () => {
       <Switch>
         <Route exact path="/" component={Dashboard} />
         <Route path="/intro" component={IntroPage} />
-        <Route path="login" component={LoginPage} />
+        <Route path="/login" component={LoginPage} />
       </Switch>
     </BrowserRouter>
   );

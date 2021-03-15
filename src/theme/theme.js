@@ -1,11 +1,19 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { grey } from "@material-ui/core/colors";
+import { grey, lightBlue, deepOrange } from "@material-ui/core/colors";
 
 const defaultTheme = createMuiTheme();
 
 const theme = createMuiTheme({
   typography: {
     fontFamily: ["'Inter'", "open-sans"].join(","),
+  },
+  palette: {
+    primary: {
+      main: deepOrange[600],
+    },
+    secondary: {
+      main: lightBlue[900],
+    },
   },
   overrides: {
     MuiTypography: {
@@ -42,6 +50,12 @@ const theme = createMuiTheme({
         letterSpacing: 2,
       },
     },
+    MuiAppBar: {
+      colorPrimary: {
+        backgroundColor: lightBlue[900],
+        color: "white",
+      },
+    },
     MuiButton: {
       root: {
         padding: defaultTheme.spacing(2, 2),
@@ -76,6 +90,9 @@ const theme = createMuiTheme({
       rounded: {
         borderRadius: defaultTheme.spacing(1),
         padding: defaultTheme.spacing(2, 3, 4, 3),
+      },
+      elevation4: {
+        boxShadow: "none",
       },
     },
   },
