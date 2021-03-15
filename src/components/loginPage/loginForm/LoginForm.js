@@ -5,7 +5,7 @@ const LoginForm = () => {
   const classes = useStyles();
   return (
     <Paper elevation={3} className={classes.loginFormContainer}>
-      <Typography variant="h6" className={classes.loginTitle}>
+      <Typography variant="h5" className={classes.loginTitle}>
         Connexion
       </Typography>
       <TextField

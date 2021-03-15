@@ -1,11 +1,11 @@
-import LoginPage from "./components/loginPage/LoginPage";
+import QrMenuRouter from "./router/QrMenuRouter";
 import { useStyles } from "./stylesApp";
 
 function App() {
   const classes = useStyles();
   return (
     <div className={classes.pageContainer}>
-      <LoginPage />
+      <QrMenuRouter />
     </div>
   );
 }

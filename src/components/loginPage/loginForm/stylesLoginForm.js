@@ -8,7 +8,6 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    padding: theme.spacing(2, 3, 4, 3),
   },
   loginTitle: {
     marginBottom: theme.spacing(2),
