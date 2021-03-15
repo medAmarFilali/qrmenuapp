@@ -39,8 +39,8 @@ const theme = createMuiTheme({
         // letterSpacing: 1,
       },
       h5: {
-        fontSize: "1.3rem",
-        fontWeight: 700,
+        fontSize: "1.2rem",
+        fontWeight: 400,
         color: grey[900],
       },
       h6: {
