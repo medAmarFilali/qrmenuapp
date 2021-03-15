@@ -26,4 +26,10 @@ export const useStyles = makeStyles((theme) => ({
     color: "white",
     fontSize: 30,
   },
+  menuButton: {
+    margin: theme.spacing(0, 2),
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
 }));

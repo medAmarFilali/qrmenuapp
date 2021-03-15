@@ -1,11 +1,24 @@
+import { useState } from "react";
 import QrAppBar from "../dashboardLayout/qrAppBar/QrAppBar";
 import QrDrawer from "../dashboardLayout/qrDrawer/QrDrawer";
 
 const DashboardLayout = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
     <>
-      <QrAppBar />
-      <QrDrawer />
+      <QrAppBar
+        handleDrawerToggle={handleDrawerToggle}
+        mobileOpen={mobileOpen}
+      />
+      <QrDrawer
+        handleDrawerToggle={handleDrawerToggle}
+        mobileOpen={mobileOpen}
+      />
     </>
   );
 };
