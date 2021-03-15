@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import MakeMenu from "./makeMenu/MakeMenu";
 import MenuIntro from "./menuIntro/MenuIntro";
 
 const MenuManagerPage = () => {
@@ -6,7 +7,7 @@ const MenuManagerPage = () => {
 
   return (
     <div>
-      <div>{!data.menu ? <MenuIntro /> : null}</div>
+      <div>{!data.menu ? <MenuIntro /> : <MakeMenu />}</div>
     </div>
   );
 };
