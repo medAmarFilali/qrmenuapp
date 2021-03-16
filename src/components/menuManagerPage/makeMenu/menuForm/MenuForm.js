@@ -26,14 +26,12 @@ const MenuForm = ({ menuData, setMenuData }) => {
         ...menuData.dishes,
         {
           id: menuData.dishes.length + 1,
-          dishName: "",
-          dishPrice: "",
+          sectionName: "",
+          items: [],
         },
       ],
     });
   };
-
-  console.log(menuData);
 
   return (
     <div className={classes.menuFormContainer}>
@@ -59,7 +57,11 @@ const MenuForm = ({ menuData, setMenuData }) => {
             setMenuData({ ...menuData, platdujour: e.target.value })
           }
         />
-        {menuData.dishes.length ? <SectionForm /> : null}
+        {menuData.dishes.map((el) => {
+          return (
+            <SectionForm key={el.id} dish={el} setMenuData={setMenuData} menuData={menuData} />
+          );
+        })}
         <Button
           variant="contained"
           color="primary"
