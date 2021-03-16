@@ -89,7 +89,7 @@ const theme = createMuiTheme({
     MuiPaper: {
       rounded: {
         borderRadius: defaultTheme.spacing(1),
-        padding: defaultTheme.spacing(2, 3, 4, 3),
+        padding: defaultTheme.spacing(2, 3, 3, 3),
       },
       elevation4: {
         boxShadow: "none",

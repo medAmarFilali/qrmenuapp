@@ -23,7 +23,7 @@ const dataReducer = (state = initState, action) => {
       return {
         ...state,
         menu: {
-          Name: "",
+          name: "",
           platdujour: "",
           dishes: [],
         },

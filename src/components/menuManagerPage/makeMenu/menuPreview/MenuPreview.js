@@ -1,9 +1,9 @@
-import { Typography } from "@material-ui/core";
+import ClassicTemplate from "../../../menuTemplates/classicTemplate/ClassicTemplate";
 
-const MenuPreview = () => {
+const MenuPreview = ({ menuData }) => {
   return (
     <div>
-      <Typography variant="h5">Menu Preview</Typography>
+      <ClassicTemplate menuData={menuData} />
     </div>
   );
 };

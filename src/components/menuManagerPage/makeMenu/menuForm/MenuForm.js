@@ -1,19 +1,16 @@
-import { useState } from "react";
 import { Typography, TextField, Paper, Button } from "@material-ui/core";
 import { useStyles } from "./styleMenuForm";
 import { useSelector, useDispatch } from "react-redux";
 import { addData } from "../../../../store/actions/dataAction";
 
-const MenuForm = () => {
+const MenuForm = ({ menuData, setMenuData }) => {
   const classes = useStyles();
   const restoData = useSelector((state) => state.data);
   const dispatch = useDispatch();
-  const [menuName, setMenuName] = useState("");
-  const [platdujour, setPlatdujour] = useState("");
 
   const handleDataAdd = (e) => {
     e.preventDefault();
-    dispatch(addData({ name: menuName, platdujour }));
+    dispatch(addData({ name: menuData.name, platdujour: menuData.platdujour }));
   };
 
   console.log(restoData);
@@ -29,20 +26,24 @@ const MenuForm = () => {
           variant="outlined"
           fullWidth
           className={classes.textField}
-          value={menuName}
-          onChange={(e) => setMenuName(e.target.value)}
+          value={menuData.name}
+          onChange={(e) => setMenuData({ ...menuData, name: e.target.value })}
         />
         <TextField
           label="Plat du jour"
           variant="outlined"
           fullWidth
           className={classes.textField}
-          value={platdujour}
-          onChange={(e) => setPlatdujour(e.target.value)}
+          value={menuData.platdujour}
+          onChange={(e) =>
+            setMenuData({ ...menuData, platdujour: e.target.value })
+          }
         />
-        <Button variant="contained" color="secondary" onClick={handleDataAdd}>
-          Ajouter infos
-        </Button>
+        <div className={classes.buttonContainer}>
+          <Button variant="contained" color="secondary" onClick={handleDataAdd}>
+            Ajouter infos
+          </Button>
+        </div>
       </Paper>
     </div>
   );
