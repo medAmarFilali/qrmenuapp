@@ -1,14 +1,16 @@
 import { Typography } from "@material-ui/core";
 import { useStyles } from "./styleClassicTemplate";
 
-const ClassicTemplate = ({ menuData }) => {
+const ClassicTemplate = ({ menuData, restoData }) => {
   const classes = useStyles();
   return (
     <div className={classes.classicContainer}>
       <div className={classes.classicHeader}>
-        {/* <Typography variant="h4">{data.name}</Typography> */}
-        <Typography variant="subtitle2">{menuData.name}</Typography>
-        <Typography variant="subtitle2">{menuData.platdujour}</Typography>
+        <Typography variant="h4">Restaurant {restoData.name}</Typography>
+        <Typography variant="h6">{menuData.name}</Typography>
+        <Typography variant="subtitle2">
+          Plat du jour: {menuData.platdujour}
+        </Typography>
       </div>
     </div>
   );

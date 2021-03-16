@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { grey } from "@material-ui/core/colors";
+import { lightBlue } from "@material-ui/core/colors";
 
 export const useStyles = makeStyles((theme) => ({
   classicContainer: {
@@ -10,8 +10,8 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: 300,
-    backgroundColor: grey[200],
+    height: 200,
+    backgroundColor: lightBlue[200],
     flexDirection: "column",
   },
 }));

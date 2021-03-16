@@ -1,19 +1,39 @@
 import { Typography, TextField, Paper, Button } from "@material-ui/core";
 import { useStyles } from "./styleMenuForm";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addData } from "../../../../store/actions/dataAction";
+import SectionForm from "./sectionForm/SectionForm";
 
 const MenuForm = ({ menuData, setMenuData }) => {
   const classes = useStyles();
-  const restoData = useSelector((state) => state.data);
   const dispatch = useDispatch();
 
   const handleDataAdd = (e) => {
     e.preventDefault();
-    dispatch(addData({ name: menuData.name, platdujour: menuData.platdujour }));
+    dispatch(
+      addData({
+        name: menuData.name,
+        platdujour: menuData.platdujour,
+        dishes: menuData.dishes,
+      })
+    );
   };
 
-  console.log(restoData);
+  const handleAddSection = () => {
+    setMenuData({
+      ...menuData,
+      dishes: [
+        ...menuData.dishes,
+        {
+          id: menuData.dishes.length + 1,
+          dishName: "",
+          dishPrice: "",
+        },
+      ],
+    });
+  };
+
+  console.log(menuData);
 
   return (
     <div className={classes.menuFormContainer}>
@@ -39,9 +59,19 @@ const MenuForm = ({ menuData, setMenuData }) => {
             setMenuData({ ...menuData, platdujour: e.target.value })
           }
         />
+        {menuData.dishes.length ? <SectionForm /> : null}
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          className={classes.textField}
+          onClick={handleAddSection}
+        >
+          Ajouter une section
+        </Button>
         <div className={classes.buttonContainer}>
           <Button variant="contained" color="secondary" onClick={handleDataAdd}>
-            Ajouter infos
+            Mettre a jour le menu
           </Button>
         </div>
       </Paper>
