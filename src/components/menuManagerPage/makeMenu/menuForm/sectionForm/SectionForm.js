@@ -2,6 +2,7 @@ import { Typography, TextField, Divider, Button } from "@material-ui/core";
 import { useStyles } from "./styleSectionForm";
 import { produce } from "immer";
 import DishForm from "./dishForm/DishForm";
+import { v4 as uuidv4 } from "uuid";
 
 const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
   const classes = useStyles();
@@ -15,6 +16,19 @@ const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
           if (dish.id === id) {
             dish.sectionName = e.target.value;
           }
+        });
+      })
+    );
+  };
+
+  const handleAddDish = () => {
+    setMenuData(
+      produce((draft) => {
+        draft.dishes[index].items.push({
+          id: uuidv4(),
+          dishName: "",
+          dishPrice: "",
+          dishDescription: "",
         });
       })
     );
@@ -39,11 +53,22 @@ const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
         value={dish.sectionName}
         onChange={handleSectionNameChange}
       />
-      <DishForm />
+      {menuData.dishes[index].items.map((dish, index) => (
+        <DishForm
+          key={dish.id}
+          sectionId={id}
+          id={dish.id}
+          index={index}
+          setMenuData={setMenuData}
+          menuData={menuData}
+          dish={dish}
+        />
+      ))}
       <Button
         variant="outlined"
         color="secondary"
         className={classes.addDishButton}
+        onClick={handleAddDish}
         fullWidth
       >
         Ajouter un plat
