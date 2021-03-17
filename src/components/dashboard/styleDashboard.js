@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   contentContainer: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(3, 3, 0, 3),
     marginTop: theme.spacing(6),
   },
 }));

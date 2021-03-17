@@ -4,6 +4,8 @@ export const useStyles = makeStyles((theme) => ({
   menuFormContainer: {
     display: "flex",
     flexDirection: "column",
+    height: "calc(100vh - 72px)",
+    overflowY: "scroll",
   },
   menuFormTitle: {
     marginBottom: theme.spacing(2),
