@@ -7,8 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
   const classes = useStyles();
 
-  console.log(menuData);
-
   const handleSectionNameChange = (e) => {
     setMenuData(
       produce((draft) => {

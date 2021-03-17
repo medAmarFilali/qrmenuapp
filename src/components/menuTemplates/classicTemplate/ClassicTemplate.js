@@ -1,4 +1,5 @@
 import { Typography } from "@material-ui/core";
+import ClassicSection from "./classicSection/ClassicSection";
 import { useStyles } from "./styleClassicTemplate";
 
 const ClassicTemplate = ({ menuData, restoData }) => {
@@ -11,6 +12,11 @@ const ClassicTemplate = ({ menuData, restoData }) => {
         <Typography variant="subtitle2">
           Plat du jour: {menuData.platdujour}
         </Typography>
+      </div>
+      <div className={classes.menuBody}>
+        {menuData.dishes.map((section) => (
+          <ClassicSection key={section.id} section={section} />
+        ))}
       </div>
     </div>
   );
