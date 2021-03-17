@@ -1,50 +1,54 @@
-import { Typography, TextField, Divider } from "@material-ui/core";
+import { Typography, TextField, Divider, Button } from "@material-ui/core";
 import { useStyles } from "./styleSectionForm";
-import clsx from "clsx";
+import { produce } from "immer";
+import DishForm from "./dishForm/DishForm";
 
-const SectionForm = ({ dish, setMenuData, menuData }) => {
+const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
   const classes = useStyles();
-  console.log(dish);
+
+  console.log(menuData);
+
+  const handleSectionNameChange = (e) => {
+    setMenuData(
+      produce((draft) => {
+        draft.dishes.forEach((dish) => {
+          if (dish.id === id) {
+            dish.sectionName = e.target.value;
+          }
+        });
+      })
+    );
+  };
+
   return (
     <div className={classes.sectionContainer}>
       <Divider variant="middle" className={classes.divider} />
       <div className={classes.sectionHeader}>
         <div>
-          <Typography variant="subtitle2">Section 1</Typography>
+          <Typography variant="subtitle2">
+            {menuData.dishes[index].sectionName
+              ? menuData.dishes[index].sectionName
+              : "Section"}
+          </Typography>
         </div>
       </div>
       <TextField
         label="Nom de la section"
         variant="outlined"
         fullWidth
-        onClick={(e) =>
-          setMenuData({
-            ...menuData,
-            dishes: [...menuData.dishes],
-          })
-        }
+        value={dish.sectionName}
+        onChange={handleSectionNameChange}
       />
-      <div className={classes.dishContainer}>
-        <TextField
-          label="Plat"
-          variant="outlined"
-          fullWidth
-          className={clsx(classes.textField, classes.dish)}
-        />
-        <TextField
-          label="Prix"
-          variant="outlined"
-          fullWidth
-          className={clsx(classes.textField, classes.price)}
-        />
-      </div>
-      <TextField
-        label="Description"
+      <DishForm />
+      <Button
         variant="outlined"
+        color="secondary"
+        className={classes.addDishButton}
         fullWidth
-        className={classes.textFieldDescription}
-        rows={4}
-      />
+      >
+        Ajouter un plat
+      </Button>
+      <Divider variant="middle" className={classes.divider} />
     </div>
   );
 };

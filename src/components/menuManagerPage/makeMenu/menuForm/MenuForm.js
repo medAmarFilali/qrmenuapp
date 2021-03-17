@@ -3,6 +3,8 @@ import { useStyles } from "./styleMenuForm";
 import { useDispatch } from "react-redux";
 import { addData } from "../../../../store/actions/dataAction";
 import SectionForm from "./sectionForm/SectionForm";
+import { v4 as uuidv4 } from "uuid";
+import { produce } from "immer";
 
 const MenuForm = ({ menuData, setMenuData }) => {
   const classes = useStyles();
@@ -20,17 +22,15 @@ const MenuForm = ({ menuData, setMenuData }) => {
   };
 
   const handleAddSection = () => {
-    setMenuData({
-      ...menuData,
-      dishes: [
-        ...menuData.dishes,
-        {
-          id: menuData.dishes.length + 1,
+    setMenuData(
+      produce((draft) => {
+        draft.dishes.push({
+          id: uuidv4(),
           sectionName: "",
           items: [],
-        },
-      ],
-    });
+        });
+      })
+    );
   };
 
   return (
@@ -57,9 +57,16 @@ const MenuForm = ({ menuData, setMenuData }) => {
             setMenuData({ ...menuData, platdujour: e.target.value })
           }
         />
-        {menuData.dishes.map((el) => {
+        {menuData.dishes.map((el, index) => {
           return (
-            <SectionForm key={el.id} dish={el} setMenuData={setMenuData} menuData={menuData} />
+            <SectionForm
+              key={el.id}
+              index={index}
+              id={el.id}
+              dish={el}
+              setMenuData={setMenuData}
+              menuData={menuData}
+            />
           );
         })}
         <Button
