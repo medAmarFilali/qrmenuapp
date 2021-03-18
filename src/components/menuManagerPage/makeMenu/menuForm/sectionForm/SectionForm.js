@@ -42,10 +42,18 @@ const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
     );
   };
 
-  const handleSectionDelete = (e) => {
+  const handleSectionDelete = (e, theId) => {
     e.stopPropagation();
-    console.log(e);
+
+    setMenuData(
+      produce((draft) => {
+        const theIndex = draft.dishes.findIndex((item) => item.id === theId);
+        if (theIndex !== -1) draft.dishes.splice(index, 1);
+      })
+    );
   };
+
+  console.log(menuData);
 
   return (
     <div className={classes.sectionContainer}>
@@ -65,7 +73,7 @@ const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
             </Typography>
           </div>
           <div className={classes.deleteIconContainer}>
-            <IconButton onClick={handleSectionDelete}>
+            <IconButton onClick={(e) => handleSectionDelete(e, id)}>
               <HighlightOffIcon />
             </IconButton>
           </div>
