@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { TextField, Button } from "@material-ui/core";
 import { useStyles } from "./styleIntroForm";
 import { restaurantData } from "../../../store/actions/dataAction";
 
 const IntroForm = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.data);
   const classes = useStyles();
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -15,8 +14,6 @@ const IntroForm = () => {
   const handleSubmit = (e) => {
     dispatch(restaurantData({ name, address, phone }));
   };
-
-  console.log(data);
 
   return (
     <div className={classes.introFormContainer}>

@@ -1,6 +1,6 @@
 import { Typography, TextField, Paper, Button } from "@material-ui/core";
 import { useStyles } from "./styleMenuForm";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addData } from "../../../../store/actions/dataAction";
 import SectionForm from "./sectionForm/SectionForm";
 import { v4 as uuidv4 } from "uuid";
@@ -9,6 +9,7 @@ import { produce } from "immer";
 const MenuForm = ({ menuData, setMenuData }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.data);
 
   const handleDataAdd = (e) => {
     e.preventDefault();
@@ -32,6 +33,10 @@ const MenuForm = ({ menuData, setMenuData }) => {
       })
     );
   };
+
+  console.log(data);
+
+  console.log(menuData);
 
   return (
     <div className={classes.menuFormContainer}>

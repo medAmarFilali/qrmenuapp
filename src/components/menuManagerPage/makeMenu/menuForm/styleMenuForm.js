@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   formPaper: {
-    width: 450,
+    width: "100%",
   },
   textField: {
     marginBottom: theme.spacing(2),

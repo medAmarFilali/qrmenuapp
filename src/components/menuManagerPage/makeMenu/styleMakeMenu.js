@@ -6,8 +6,11 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     flexWrap: "wrap",
   },
-  formContainer: {
-    width: "45%",
+  formContainer: (mobile) => {
+    console.log(mobile);
+    return {
+      width: mobile ? "100%" : "45%",
+    };
   },
   previewContainer: {
     width: "55%",

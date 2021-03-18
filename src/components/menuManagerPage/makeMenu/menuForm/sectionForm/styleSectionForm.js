@@ -12,7 +12,6 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   sectionHeader: {
-    // margin: theme.spacing(2, 0, 2, 0),
     "& .MuiAccordionSummary-content": {
       backgroundColor: grey[300],
       borderRadius: theme.spacing(1),

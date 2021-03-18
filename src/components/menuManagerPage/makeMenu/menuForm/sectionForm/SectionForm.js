@@ -53,8 +53,6 @@ const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
     );
   };
 
-  console.log(menuData);
-
   return (
     <div className={classes.sectionContainer}>
       <Accordion defaultExpanded>

@@ -35,7 +35,7 @@ const dataReducer = (state = initState, action) => {
         menu: {
           name: action.payload.name,
           platdujour: action.payload.platdujour,
-          dishes: [],
+          dishes: action.payload.dishes,
         },
       };
     }
