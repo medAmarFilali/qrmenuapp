@@ -10,8 +10,6 @@ const MakeMenu = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const classes = useStyles(mobile);
 
-  console.log(mobile);
-
   const [menuData, setMenuData] = useState({
     name: "",
     platdujour: "",
@@ -23,7 +21,6 @@ const MakeMenu = () => {
       <div className={classes.formContainer}>
         <MenuForm menuData={menuData} setMenuData={setMenuData} />
       </div>
-
       {!mobile ? (
         <div className={classes.previewContainer}>
           <MenuPreview menuData={menuData} />

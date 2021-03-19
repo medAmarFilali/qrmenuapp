@@ -7,7 +7,6 @@ export const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
   formContainer: (mobile) => {
-    console.log(mobile);
     return {
       width: mobile ? "100%" : "45%",
     };
