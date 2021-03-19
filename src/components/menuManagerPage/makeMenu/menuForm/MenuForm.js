@@ -45,6 +45,19 @@ const MenuForm = ({ menuData, setMenuData }) => {
   };
 
   const handleOnDragEnd = (result) => {
+    const { destination, source } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
     setMenuData(
       produce((draft) => {
         draft.dishes = reOrder(

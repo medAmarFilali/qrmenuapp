@@ -4,6 +4,7 @@ import { grey } from "@material-ui/core/colors";
 export const useStyles = makeStyles((theme) => ({
   sectionContainer: {
     // marginBottom: theme.spacing(2),
+    backgroundColor: "transparent",
     "& .MuiPaper-root": {
       padding: 0,
     },
@@ -36,5 +37,13 @@ export const useStyles = makeStyles((theme) => ({
   accordionDetails: {
     display: "flex",
     flexDirection: "column",
+  },
+  dragHandleContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  dragHandle: {
+    color: grey[600],
   },
 }));
