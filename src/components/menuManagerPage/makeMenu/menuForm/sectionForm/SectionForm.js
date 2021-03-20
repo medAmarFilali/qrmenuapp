@@ -58,7 +58,6 @@ const SectionForm = ({ id, index, dish, setMenuData, menuData }) => {
   return (
     <Draggable draggableId={dish.id} index={index}>
       {(provided) => {
-        console.log(provided);
         return (
           <div
             className={classes.sectionContainer}

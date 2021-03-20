@@ -10,7 +10,8 @@ const ClassicTemplate = ({ menuData, restoData }) => {
         <Typography variant="h4">Restaurant {restoData.name}</Typography>
         <Typography variant="h6">{menuData.name}</Typography>
         <Typography variant="subtitle2">
-          Plat du jour: {menuData.platdujour}
+          {menuData.platdujour ? "Plat du jour: " : null}
+          {menuData.platdujour}
         </Typography>
       </div>
       <div className={classes.menuBody}>

@@ -44,6 +44,6 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   dragHandle: {
-    color: grey[600],
+    color: grey[400],
   },
 }));
