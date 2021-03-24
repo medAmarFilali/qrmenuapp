@@ -34,10 +34,11 @@ const MenuForm = ({ menuData, setMenuData }) => {
     );
   };
 
+  console.log(menuData)
+
   const reOrder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
-    console.log(removed);
 
     result.splice(endIndex, 0, removed);
 
